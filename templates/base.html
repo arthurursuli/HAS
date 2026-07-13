@@ -1,0 +1,37 @@
+<html>
+	<head>
+	    <title>HAS</title>
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	</head>
+	<body>
+		<nav>
+			<div class="navbar shadow-xl">
+				<div class="flex-1">
+					<h1 class="font-bold text-xl">HAS</h1>
+				</div>
+				<div class="flex-none flex items-center gap-2">
+					<div class="dropdown dropdown-bottom dropdown-end font-bold">
+						<div tabindex="0" role="button" class="btn m-1"><img class="w-6 h-6" src="{{ url_for('static', filename='img/menu.png') }}" alt=""></div>
+						<ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+							<li><a href="{{ url_for('cursos') }}">Cursos</a></li>
+							<li><a href="{{ url_for('vagas') }}">Vagas</a></li>
+							<li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+							<li><a href="{{ url_for('contato') }}">Contato</a></li>
+							<li><a href="{{ url_for('perfil') }}">Perfil</a></li>
+						</ul>
+					</div>
+					<div>
+						<button class="btn">
+							<a href="{{ url_for('perfil') }}"><img class="w-6 h-6" src="{{ url_for('static', filename='img/perfil.png') }}" alt=""></a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</nav>
+	    <main>
+	        {% block conteudo %}
+			{% endblock %}
+	    </main>
+	</body>
+</html>
