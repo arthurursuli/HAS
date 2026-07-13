@@ -6,8 +6,17 @@
     <title>HAS</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <a href="{{ url_for('menu') }}">Entrar</a>
+<body class="font-[Sora] min-h-screen flex items-center justify-center">
+    <div class="card w-96 bg-base-100 shadow-[0_0_30px_rgba(11,60,129,0.2)] hover:shadow-[0_0_60px_rgba(0,0,0,0.4)] transition-shadow duration-300 grid justify-items-center gap-3 p-5">
+        <h1 class="font-bold text-xl">HAS</h1>
+        <button class="btn">
+            <a href="{{ url_for('login') }}">Logar</a>
+        </button>
+        <button class="btn">
+            <a href="{{ url_for('cadastro') }}">Cadastrar</a>
+        </button>
+    </div>
 </body>
 </html>

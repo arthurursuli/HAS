@@ -3,8 +3,9 @@
 	    <title>HAS</title>
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body class="font-[Sora]">
 		<nav>
 			<div class="navbar shadow-xl">
 				<div class="flex-1">
@@ -29,9 +30,15 @@
 				</div>
 			</div>
 		</nav>
-	    <main>
+	    <main class="min-w-[100%] min-h-[100%]">
 	        {% block conteudo %}
 			{% endblock %}
 	    </main>
+		<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+			<div class="flex items-center">
+				<img class="w-8 h-6" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+				<p>Copyright © 2026- All right reserved</p>
+			</div>
+		</footer>
 	</body>
 </html>
