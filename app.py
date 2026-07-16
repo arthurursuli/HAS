@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -22,13 +23,23 @@ def menu():
 def perfil():
     return render_template('perfil.html')
 
-@app.route('/cursos')
+@app.route('/cursos', methods=["GET", "POST"])
 def cursos():
-    return render_template('cursos.html')
+    quantidade = 3
 
-@app.route('/vagas')
+    if request.method == "POST":
+        quantidade = 9
+
+    return render_template("cursos.html", quantidade=quantidade)
+
+@app.route('/vagas', methods=["GET", "POST"])
 def vagas():
-    return render_template('vagas.html')
+    quantidade = 3
+
+    if request.method == "POST":
+        quantidade = 9
+
+    return render_template("vagas.html", quantidade=quantidade)
 
 @app.route('/sobre')
 def sobre():
